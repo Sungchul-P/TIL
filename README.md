@@ -1,7 +1,7 @@
 # Today I Learned
 [![HitCount](http://hits.dwyl.io/Sungchul-P/TIL.svg)](http://hits.dwyl.io/Sungchul-P/TIL)
 - 매일 배운 것을 정리한다.
-- 2019년 3월 18일 시작
+- 시작일 : 2019년 3월 18일
 
 ## 작성규칙
 - 언어나 기술명으로 폴더를 만든다.
