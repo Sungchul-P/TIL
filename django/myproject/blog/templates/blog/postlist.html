@@ -1,0 +1,18 @@
+<h1>post list 정보입니다.</h1>
+<ul>
+{% for post in post_list %}
+    <li><a href="/blog/{{post.id}}/">{{post.title}}</a></li>
+{% endfor %}
+</ul>
+
+<hr>
+
+<ul>
+{% for post in post_list %}
+    {% comment %} 
+    urls.py에 정의된 path의 name(blog:detail)으로 url을 동적생성할 수 있다. 
+    전달할 인자(post.id)가 있는 경우 뒤에 이어서 넣어주면 된다.
+    {% endcomment %}
+    <li><a href="{% url 'blog:detail' post.id %}">{{post.title}}</a></li>
+{% endfor %}
+</ul>

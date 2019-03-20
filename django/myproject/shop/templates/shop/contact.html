@@ -1,0 +1,8 @@
+<form action="" method="post">
+    {% csrf_token %}
+    {% comment %} 
+        form.as_p : form을 p태그로 만든다. 
+    {% endcomment %}
+    {{form.as_p}} 
+    <input type="submit" value="전송"/>
+</form>

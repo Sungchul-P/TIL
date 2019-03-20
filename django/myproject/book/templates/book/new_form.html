@@ -1,0 +1,16 @@
+{% load static %}
+
+<link rel="stylesheet" href="/static/css/test.css">
+<link rel="stylesheet" href="{% static 'css/test2.css' %}">
+
+<h1>Book 신규</h1>
+<form action="" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{form.as_p}}
+	<input type="submit" value="등록하기"/>
+</form>
+<button onclick="location.href='{% url 'book:list' %}'">리스트로 이동</button>
+
+<hr>
+<img src="/static/img/7.jpg"/>
+<img src="{% static 'img/27.jpg' %}"/>

@@ -1,0 +1,22 @@
+<h1>상세보기</h1>
+
+ID : {{book.id}} <br>
+제목 : {{book.title}}<br> 
+저자 : {{book.author}} <br>
+출판사 : {{book.publisher}} <br>
+출판일 : {{book.publication_date}} <br>
+IP : {{book.ip}} <br>
+
+<hr>
+
+<button onclick="location.href='{% url 'book:list' %}'">리스트로 이동</button>
+
+<hr>
+
+<img src='/media/13.jpg'/>
+<img src='/media/{{book.photo}}'/>
+{% if book.photo2 %}
+    <img src='/{{book.photo2.url}}'/>
+{% else %}
+이미지가 없어요
+{% endif %}
