@@ -1,23 +1,24 @@
 from twython import Twython
 
-APP_KEY = 'YwPserC40bg5pD8n1o9wVLxmX'
-APP_SECRET = 'QcaZ08DmePhD6pGsJYGpwSVI0O7Ha3uC1rdkGuPfvmWL18auai'
-OAUTH_TOKEN = '1079548375005945858-XPKUnSsUSZHiluY9kRGqhjCJRpW9IL'
-OAUTH_TOKEN_SECRET = '290sqmnu7Ynt98czHB9XFctG1o0QyokkDqLznqhzQDgfX'
+APP_KEY = ''
+APP_SECRET = ''
+OAUTH_TOKEN = ''
+OAUTH_TOKEN_SECRET = ''
 
 twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
 
-# tweet = twitter.get_home_timeline()
-# print(tweet)
+# tweet = twitter.get_home_timeline()[0] # 타임라인에서 가장 최근 트윗정보를 가져온다.
 # print("Tweet text: ", tweet["text"])
 # print("Tweet created at: ", tweet["created_at"])
-# print("Tweeted by: ", tweet["entitles"]["user_mentions"][0]["name"])
+# print("Tweeted by: ", tweet["user"]["name"])
 # print("Re Tweeted?: ", tweet["retweet_count"])
+
 
 from datetime import datetime
 import pytz, time
 from pytz import timezone
 import tweet_config as config
+
 
 while True:
     for msg in config.scheduled_messages:
@@ -35,5 +36,6 @@ while True:
                 print("Time", stime)
                 print("Content", msg["content"])
                 twitter.update_status(status='%s' % msg["content"])
+                time.sleep(30) # 트윗 게시 중복요청을 방지하기 위해서 딜레이를 준다.
 
     print("Running.. Will try in another min")
