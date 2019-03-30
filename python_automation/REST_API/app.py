@@ -2,6 +2,7 @@ from flask import Flask, jsonify, abort, make_response, request
 
 app = Flask(__name__)
 
+# 사용자 모델을 정의한다.
 users = [
     {
         'id': 1,
