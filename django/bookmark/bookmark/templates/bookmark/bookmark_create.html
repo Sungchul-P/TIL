@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Bookmark Add{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}} 
+    {% comment %} 각 필드 폼 태그들을 P 태그로 감싸 출력한다. {% endcomment %}
+    <input type="submit" value="Add" class="btn btn-info btn-sm">
+</form>
+{% endblock content %}
