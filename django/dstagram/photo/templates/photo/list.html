@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}- List{% endblock  %}
+
+{% block content %}
+    {% comment %} photos : 템플릿으로 전달되는 사진 오브젝트 목록 {% endcomment %}
+    {% for post in photos %}
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 panel panel-default">
+                {% comment %} 사진, 작성자 이름, 설명 문구, 댓글 달기 버튼 {% endcomment %}
+                <p><img src="{{post.photo.url}}" style="width:100%;"></p>
+                <button type="button" class="btn btn-xs btn-info">{{post.author.username}}</button>
+                <p>{{post.text|linebreaksbr}}</p>
+                <p class="text-right">
+                    <a href="{% url 'photo:photo_detail' pk=post.id %}" class="btn btn-xs btn-success">댓글달기</a>
+                </p>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    {% endfor %}
+{% endblock  %}
