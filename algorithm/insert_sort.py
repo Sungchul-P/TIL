@@ -69,7 +69,7 @@ if __name__ == '__main__':
     print(num_list)
 
     start_time = time.time()
-    insertion_sort(num_list) # 선택 정렬 시작
+    insertion_sort(num_list) # 삽입 정렬 시작
     running_time = time.time() - start_time
     print("<정렬 후>")
     print(num_list)
