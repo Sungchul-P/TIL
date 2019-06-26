@@ -50,8 +50,8 @@ class LeagueTable:
         srt = sorted(
                 self.standings.items(),
                 key=lambda kv: (
-                    -kv[1]['score'], # 내림차순 정렬
-                    kv[1]['games_played'], # 오름차순 정렬
+                    -kv[1]['score'], # 점수 기준으로 내림차순 정렬
+                    kv[1]['games_played'], # 동일 점수면 게임 횟수 기준으로 오름차순 정렬
                 ),
                 reverse=False)
         # print(srt)
