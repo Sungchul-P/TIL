@@ -1,5 +1,5 @@
 # Today I Learned
-[![HitCount](http://hits.dwyl.io/Sungchul-P/TIL.svg)](http://hits.dwyl.io/Sungchul-P/TIL)
+
 - 매일 배운 것을 정리한다.
 - 시작일 : 2019년 3월 18일
 
